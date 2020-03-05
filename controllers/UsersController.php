@@ -3,9 +3,16 @@
 
 class UsersController
 {
-   public function actionList()
+   public function actionView($id)
    {
-     echo __METHOD__.__CLASS__;
+     echo $id;
+     print_r(Users::getUsers());
+   }
+
+   public function actionIndex()
+   {
+    
+    echo "Return on VIew";
    }
 
 

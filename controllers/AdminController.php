@@ -4,8 +4,15 @@ class AdminController
 {
 
 
-    public function actionIndex()
+    public function actionAdmin($params, $id)
     {
-       echo __METHOD__.__CLASS__;
+        print_r(Users::getUsers());
+       
     }
+
+    public function actionView()
+    {
+        return true;
+    }
+
 }
