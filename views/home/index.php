@@ -18,7 +18,7 @@
                     <td><?php echo $task['user_name']; ?></td>
                     <td><?php echo $task['email']; ?></td>
                     <td><?php echo $task['description']; ?></td>
-                    <td><?php  ?></td>
+                    <td><?php if($task['status'] == 0){echo "<i class='fa fa-calendar-o'</i>";} else{ echo "<i class='fa fa-calendar-check-o'></i> ";}?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

@@ -1,7 +1,12 @@
    <script>
-         $(document).ready(function() {
-          $('#tasks').DataTable();
-      });
-  </script>
-  </body>
-  </html>
+       $(document).ready(function() {
+           //$('#tasks').DataTable();
+           $('#tasks').dataTable({
+               "iDisplayLength": 3
+           });
+
+       });
+   </script>
+   </body>
+
+   </html>
