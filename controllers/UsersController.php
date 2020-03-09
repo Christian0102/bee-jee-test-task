@@ -12,7 +12,8 @@ class UsersController
    public function actionIndex()
    {
     
-    echo "Return on VIew";
+    require_once(ROOT . '/views/home/index.php');
+    return true;
    }
 
 
