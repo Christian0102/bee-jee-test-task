@@ -12,27 +12,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@twitter</td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-                <td>@twitter</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>@twitter</td>
-                <td>@twitter</td>
-            </tr>
+            <?php foreach ($tasks as $task) : ?>
+                <tr>
+                    <th scope="row"><?php echo $task['id']; ?></th>
+                    <td><?php echo $task['user_name']; ?></td>
+                    <td><?php echo $task['email']; ?></td>
+                    <td><?php echo $task['description']; ?></td>
+                    <td><?php  ?></td>
+                </tr>
+            <?php endforeach; ?>
         </tbody>
     </table>
 </div>

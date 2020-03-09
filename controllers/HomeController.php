@@ -1,17 +1,17 @@
 <?php
 
 
-class UsersController
+class HomeController
 {
    public function actionView($id)
    {
      echo $id;
-     print_r(Users::getUsers());
+     
    }
 
    public function actionIndex()
    {
-    
+    $tasks = Tasks::getAll();
     require_once(ROOT . '/views/home/index.php');
     return true;
    }
