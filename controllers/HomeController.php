@@ -18,12 +18,10 @@ class HomeController
   public function actionCreate()
   {
 
-
     if (isset($_POST['submit'])) {
-
-      $userName = $_POST['user_name'];
-      $email = $_POST['email'];
-      $description = $_POST['description'];
+      $userName = htmlspecialchars($_POST['user_name']);
+      $email = htmlspecialchars($_POST['email']);
+      $description = htmlspecialchars($_POST['description']);
 
       $result = Tasks::create($userName, $email, $description);
       if ($result == true) {

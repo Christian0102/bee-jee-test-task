@@ -2,7 +2,7 @@
        $(document).ready(function() {
            //$('#tasks').DataTable();
            $('#tasks').dataTable({
-               "iDisplayLength": 3
+               "iDisplayLength": 3,
            });
 
        });
