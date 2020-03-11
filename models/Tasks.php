@@ -18,14 +18,10 @@ class Tasks
   {
     
     $db = Db::getConnection();
-
-    $sql = 'INSERT INTO tasks (user_name, email, description) '
-      . 'VALUES (:user_name, :email, :description)';
-
-    $result = $db->prepare($sql);
-    $result->bindParam(':user_name', $username, PDO::PARAM_STR);
-    $result->bindParam(':email', $email, PDO::PARAM_STR);
-    $result->bindParam(':description', $description, PDO::PARAM_STR);
-    return $result->execute();
+    $sql = "INSERT INTO tasks (user_name, email, description) VALUES (?, ?, ?)";
+    $result = $db->prepare($sql)->execute([$username, $email , $description]);
+   return $result;
+      
+    
   }
 }
