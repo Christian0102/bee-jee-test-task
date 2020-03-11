@@ -2,7 +2,7 @@
 return array(
        'auth/login'=>'auth/login',
        'auth/logout'=>'auth/logout',
-       'admin/([a-z]+)/([0-9]+)' => 'admin/admin/$1/$2',
+       'admin/task/update/([0-9]+)' => 'admin/update/$1',
        'admin' => 'admin/index',
        'home/task/create' => 'home/create',
        //'home/([0-9]+)'=> 'home/view/$1',

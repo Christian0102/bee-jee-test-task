@@ -41,7 +41,13 @@
         <h2 style="margin-right:23em;">You is Guest Account Enjoy it!</h2>
          <?php endif;?>
         <nav class="my-2 my-md-0 mr-md-3">
-        <a href="/" class="btn btn-success" role="button">Home</a>
+        <?php if(SessionHelper::isGuest()):?>
+            <a href="/" class="btn btn-success" role="button">Home</a>
+         <?php endif;?>
+         <?php if(!SessionHelper::isGuest()):?>
+            <a href="/admin/index" class="btn btn-dark" role="button">Back</a>
+         <?php endif;?>
+        
         <a href="/home/task/create" class="btn btn-warning" role="button">Create New Task</a>
          </nav>
          <?php if(SessionHelper::isGuest()):?>

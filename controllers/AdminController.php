@@ -4,9 +4,7 @@ class AdminController extends AdminBase
 {
 
 
-    public function actionAdmin($params, $id)
-    {
-    }
+   
 
     public function actionIndex()
     {
@@ -18,7 +16,29 @@ class AdminController extends AdminBase
     {
     }
 
-    public function store()
+    public function actionUpdate($id)
     {
+        self::checkAdmin();
+
+        $task = Tasks::getById($id);
+
+    
+        if (isset($_POST['submit'])) {
+          
+            $username = $_POST['username'];
+            $email = $_POST['email'];
+            $description = $_POST['description'];
+            $status = $_POST['status'];
+
+           
+            Tasks::updateUpdateById($id, $username, $email, $description,$status);
+
+            
+            header("Location: /admin/index");
+        }
+        require_once(ROOT . '/views/admin_category/update.php');
+        return true;
+
+
     }
 }
