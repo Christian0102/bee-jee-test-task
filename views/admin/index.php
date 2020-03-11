@@ -1,7 +1,7 @@
 <?php include ROOT . '/views/layouts/header.php'; ?>
 </section>
 <div class="container-fliud">
-    <table class="table-success" id="tasks">
+    <table class="table" id="tasks">
         <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
@@ -9,6 +9,7 @@
                 <th scope="col">Email</th>
                 <th scope="col">Description</th>
                 <th scope="col">Status</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -19,6 +20,10 @@
                     <td><?php echo $task['email']; ?></td>
                     <td><?php echo $task['description']; ?></td>
                     <td><?php if($task['status'] == 0){echo "<i class='fa fa-calendar-o fa-lg'</i>";} else{ echo "<i class='fa fa-calendar-check-o fa-lg'></i> ";}?></td>
+                    <td>
+                        Edit
+
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

@@ -1,28 +1,24 @@
 <?php
 
-class AdminController
+class AdminController extends AdminBase
 {
 
 
     public function actionAdmin($params, $id)
     {
-        
     }
 
-    public function actionView()
+    public function actionIndex()
     {
-
-        echo '<pre>';
-        print_r(Tasks::getAll());die;
+        $tasks = Tasks::getAll();
+        require_once(ROOT . '/views/admin/index.php');
         return true;
     }
     public function create()
     {
-
     }
 
     public function store()
     {
-
     }
 }

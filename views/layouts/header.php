@@ -34,11 +34,22 @@
 
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
         <h5 class="my-0 mr-md-auto font-weight-normal"> Task Manager</h5>
+        <?php if(!SessionHelper::isGuest()):?>
+        <h2 style="margin-right:20em;">You Logged with Admin Account Enjoy it!</h2>
+         <?php endif;?>
+         <?php if(SessionHelper::isGuest()):?>
+        <h2 style="margin-right:23em;">You is Guest Account Enjoy it!</h2>
+         <?php endif;?>
         <nav class="my-2 my-md-0 mr-md-3">
         <a href="/" class="btn btn-success" role="button">Home</a>
         <a href="/home/task/create" class="btn btn-warning" role="button">Create New Task</a>
          </nav>
-        <a class="btn btn-outline-primary" href="https://getbootstrap.com/docs/4.0/examples/pricing/#">Sign up</a>
+         <?php if(SessionHelper::isGuest()):?>
+        <a class="btn btn-outline-primary" href="/auth/login">Login</a>
+         <?php endif;?>
+         <?php if(!SessionHelper::isGuest()):?>
+        <a class="btn btn-outline-dark" href="/auth/logout">Logout</a>
+         <?php endif;?>
     </div>
 
 
