@@ -26,7 +26,7 @@
                         echo "<i class='fa fa-calendar-o fa-lg'</i>";
                     } else {
                         echo "<i class='fa fa-calendar-check-o fa-lg'></i> ";
-                    } ?></td>
+                    } ?><small><?php if ($task['edit_admin'] == 1) {echo "Updated by Admin";} ?></small></td>
             </tr>
         <?php endforeach; ?>
     </tbody>

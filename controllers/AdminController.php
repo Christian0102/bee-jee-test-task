@@ -8,6 +8,8 @@ class AdminController extends AdminBase
 
     public function actionIndex()
     {
+      print_r($_COOKIE);
+
         self::checkAdmin();
 
         $tasks = Tasks::getAll();

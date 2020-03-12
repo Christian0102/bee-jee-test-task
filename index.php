@@ -1,4 +1,8 @@
 <?php
+/**Front Controller  */
+
+
+
 /*General Settings*/ 
 
 
@@ -8,8 +12,6 @@ error_reporting(E_ALL);
 
 /*Connection App Files*/
 session_start();
-
-
 define('ROOT', dirname(__FILE__));
 
 require_once(ROOT.'/components/Router.php');
