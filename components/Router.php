@@ -72,6 +72,7 @@ class Router
 
 				/**If Controller Method return true break dowon router proccesing  */
 				if ($result != null) {
+					session_write_close();
 					break;
 				}
 			}

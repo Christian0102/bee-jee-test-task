@@ -7,7 +7,7 @@ class Users
 
             $db = Db::getConnection();
 
-            
+
             $sql = 'SELECT * FROM users WHERE name = :name AND password = :password';
 
             $result = $db->prepare($sql);
@@ -22,6 +22,19 @@ class Users
                   return $user['id'];
             }
             return false;
+      }
+      public static function getUserById($id)
+      {
+            
+            $db = Db::getConnection();
+            $sql = 'SELECT * FROM users WHERE id = :id';
+            $result = $db->prepare($sql);
+            $result->bindParam(':id', $id, PDO::PARAM_INT);
+            
+            $result->setFetchMode(PDO::FETCH_ASSOC);
+            $result->execute();
+
+            return $result->fetch();
       }
 
 

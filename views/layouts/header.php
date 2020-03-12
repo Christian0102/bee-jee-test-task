@@ -47,14 +47,19 @@
          <?php if(!SessionHelper::isGuest()):?>
             <a href="/admin/index" class="btn btn-dark" role="button">Back</a>
          <?php endif;?>
+         <?php if(!SessionHelper::isGuest()):?>
+            <a href="/admin/task/create" class="btn btn-info" role="button">Create New Task</a>
+         <?php endif;?>
+         <?php if(SessionHelper::isGuest()):?>
+            <a href="/home/task/create" class="btn btn-warning" role="button">Create New Task</a>
+         <?php endif;?>
         
-        <a href="/home/task/create" class="btn btn-warning" role="button">Create New Task</a>
          </nav>
          <?php if(SessionHelper::isGuest()):?>
         <a class="btn btn-outline-primary" href="/auth/login">Login</a>
          <?php endif;?>
          <?php if(!SessionHelper::isGuest()):?>
-        <a class="btn btn-outline-dark" href="/auth/logout">Logout</a>
+        <a class="btn btn-outline-dark" href="/auth/logout" onClick="return confirm('You Are Sure ?')">Logout</a>
          <?php endif;?>
     </div>
 

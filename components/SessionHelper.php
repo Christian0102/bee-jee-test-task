@@ -28,4 +28,27 @@ class SessionHelper
 
         $_SESSION['user'] = $userId;
     }
+
+
+    public static function setFlashMessage($message)
+    {
+        $_SESSION['flash'] = $message;
+    }
+
+    public static function deleteFlashMessage()
+    {
+        if (isset($_SESSION['flash'])) {
+            unset($_SESSION['flash']);
+            return true;
+        }
+        return false;
+    }
+
+    public static function getFlashMessage()
+    {
+        echo $_SESSION['flash'];
+        self::deleteFlashMessage();
+        session_destroy();
+
+    }
 }
