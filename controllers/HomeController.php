@@ -10,7 +10,7 @@ class HomeController
 
   public function actionIndex()
   {
-    print_r($_COOKIE);
+   
     $tasks = Tasks::getAll();
     require_once(ROOT . '/views/home/index.php');
     return true;
